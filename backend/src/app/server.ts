@@ -1,12 +1,12 @@
-import express, { Request, Response } from 'express'
-import router from './routes'
+import express from 'express';
+import router from './routes';
 
-const app = express()
-const PORT = 3333
+const app = express();
+const PORT = 3333;
 
-app.use(express.json())
-app.use(router)
+app.use(express.json());
+app.use(router);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`)
-})
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

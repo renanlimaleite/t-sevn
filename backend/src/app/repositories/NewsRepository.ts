@@ -1,15 +1,16 @@
 class NewsRepository {
   async findAllMain() {
-    return []
+    return [];
   }
 
   async findAllSecondary() {
-    return []
+    return [];
   }
 
-  async findById(id: string) {    
-    return []
+  async findById(id: string) {
+    const result = [{ id: '1' }].find((mock) => mock?.id === id);
+    return result;
   }
 }
 
-export default new NewsRepository()
+export default new NewsRepository();
