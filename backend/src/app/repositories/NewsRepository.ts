@@ -1,14 +1,18 @@
+import Mock from '../mock';
+
 class NewsRepository {
   async findAllMain() {
-    return [];
+    const result = Mock.filter(((item) => item.type === 'main'));
+    return result;
   }
 
   async findAllSecondary() {
-    return [];
+    const result = Mock.filter(((item) => item.type === 'secondary'));
+    return result;
   }
 
   async findById(id: string) {
-    const result = [{ id: '1' }].find((mock) => mock?.id === id);
+    const result = Mock.find((mock) => mock?.id === id);
     return result;
   }
 }

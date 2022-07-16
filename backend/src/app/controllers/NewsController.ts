@@ -17,6 +17,10 @@ class NewsController {
 
     const uniqueNew = await NewsRepository.findById(id);
 
+    if (!uniqueNew) {
+      return response.status(404).json({ error: 'new not found' });
+    }
+
     return response.status(200).json(uniqueNew);
   }
 }
