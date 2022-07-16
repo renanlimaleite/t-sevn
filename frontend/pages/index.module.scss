@@ -1,0 +1,15 @@
+@import '../styles/theme.scss';
+
+.header {
+  height: 54px;
+  background-color: $yellow-main;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 23px;
+    color: #000;
+  }
+}
