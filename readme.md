@@ -12,6 +12,9 @@
 - rode `yarn dev`
 - obs: A porta `3333` deve estar livre.
 
-## Frontend:
+## Frontend: 👍 Atenção!! Rode o backend primeiro 👍
 - Clone o repositorio como todo
 - Entre na pasta /frontend
+- rode `yarn install`
+- rode `yarn dev`
+- obs: A porta `3333` deve estar livre.
