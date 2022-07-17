@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import React from "react"
 import { Content } from ".."
 import api from "../../services/api"
 import { Header } from "../components/Header/header"
@@ -18,8 +19,7 @@ interface PostProps {
 }
 
 const Posts: NextPage<PostProps> = (props) => { 
-  const { id, content, categorie, title, type } = props.data
-  console.log(id, content, categorie, title, type)
+  const { content, categorie, title } = props.data
   return (
     <>
       <Header back={true}>
@@ -29,14 +29,14 @@ const Posts: NextPage<PostProps> = (props) => {
         <strong>{categorie.toUpperCase()}</strong>
         <h1 className={S.title}>{title}</h1>
         {!!content.length && content.map((cont => (
-          <>
+          <React.Fragment key={cont.text}>
             <p>{cont.resume}</p>
             <strong className={S.date}>{cont.date}</strong>
             <Publicidade>
               <h2>Publicidade</h2>
             </Publicidade>
             <p className={S.text}>{cont.text}</p>
-          </>
+          </React.Fragment>
         )))}
       </main>
     </>
