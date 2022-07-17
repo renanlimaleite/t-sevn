@@ -12,6 +12,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 42px;
+    grid-template-columns: 1fr;
+  }
 }
 
 .contentMain {
@@ -22,6 +27,11 @@
     font-size: 58px;
     line-height: 60px;
     color: $black;
+
+    @media screen and (max-width: 768px) {
+      font-size: 29px;
+      line-height: 30px;
+    }
   }
 
   strong {
@@ -108,7 +118,10 @@
           background-color: $diversity-color
         }
       }
+
+      @media screen and (max-width: 768px) {
+        width: 50%;      
+      }
     }
   }
-
 }
