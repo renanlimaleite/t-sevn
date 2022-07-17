@@ -1,6 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import api from '../services/api'
+import { Publicidade } from './components/Publicidade/publicidade'
 import S from './index.module.scss'
 
 export type Content = {
@@ -38,7 +39,9 @@ const Home: NextPage<HomeProps> = ({ mainData, secondaryData }) => {
         <h1>SEVN NEWS</h1>
       </header>
       <main className={S.container}>
-        <h1>Publicidade</h1>        
+        <Publicidade>
+          <h1>Publicidade</h1>
+        </Publicidade>       
       </main>
     </>
   )
