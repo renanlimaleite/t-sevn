@@ -8,7 +8,7 @@ const Mock = [
       {
         resume: 'Nesta primeira fase do serviço são cerca de R$ 4 bilhões a serem devolvidos. Banco Central estima que os clientes tenham a receber cerca de R$ 8 bilhões.',
         date: '13/02/2022 as 16h30, Por: Redação',
-        text: 'economia 1) Aliquam feugiat dolor sit amet sagittis rhoncus. Fusce tincidunt metus vitae nisl bibendum, at condimentum lectus convallis. Suspendisse lobortis convallis ante at sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ac ipsum maximus, rutrum sem eu, auctor ante. Pellentesque maximus nisi a malesuada semper. In at mattis lacus. Vivamus lobortis orci volutpat est tempus dictum. Nulla dapibus lectus nibh. Sed ac condimentum ligula. Donec gravida, sapien suscipit lobortis elementum, purus libero viverra ante, a maximus tellus elit et ex.',
+        text: 'economia 1)  Aliquam feugiat dolor sit amet sagittis rhoncus. Fusce tincidunt metus vitae nisl bibendum, at condimentum lectus convallis. Suspendisse lobortis convallis ante at sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ac ipsum maximus, rutrum sem eu, auctor ante. Pellentesque maximus nisi a malesuada semper. In at mattis lacus. Vivamus lobortis orci volutpat est tempus dictum. Nulla dapibus lectus nibh. Sed ac condimentum ligula. Donec gravida, sapien suscipit lobortis elementum, purus libero viverra ante, a maximus tellus elit et ex.',
       },
     ],
   },
@@ -44,7 +44,7 @@ const Mock = [
     id: '4',
     type: 'secondary',
     categorie: 'economia',
-    title: 'Quem não tiver valores a receber nesta etapa poderá ter nas próximas fases, diz BC',
+    title: 'Quem não tiver valores a receber poderá ter nas próximas fases, diz BC',
     content: [
       {
         resume: 'Nesta primeira fase do serviço são cerca de R$ 4 bilhões a serem devolvidos. Banco Central estima que os clientes tenham a receber cerca de R$ 8 bilhões.',
@@ -57,7 +57,7 @@ const Mock = [
     id: '5',
     type: 'secondary',
     categorie: 'economia',
-    title: 'Quem não tiver valores a receber nesta etapa poderá ter nas próximas fases, diz BC',
+    title: 'Quem não tiver valores a receber poderá ter nas próximas fases, diz BC',
     content: [
       {
         resume: 'Nesta primeira fase do serviço são cerca de R$ 4 bilhões a serem devolvidos. Banco Central estima que os clientes tenham a receber cerca de R$ 8 bilhões.',
@@ -70,7 +70,7 @@ const Mock = [
     id: '6',
     type: 'secondary',
     categorie: 'economia',
-    title: 'Quem não tiver valores a receber nesta etapa poderá ter nas próximas fases, diz BC',
+    title: 'Quem não tiver valores a receber poderá ter nas próximas fases, diz BC',
     content: [
       {
         resume: 'Nesta primeira fase do serviço são cerca de R$ 4 bilhões a serem devolvidos. Banco Central estima que os clientes tenham a receber cerca de R$ 8 bilhões.',
@@ -83,7 +83,7 @@ const Mock = [
     id: '7',
     type: 'secondary',
     categorie: 'economia',
-    title: 'Quem não tiver valores a receber nesta etapa poderá ter nas próximas fases, diz BC',
+    title: 'Quem não tiver valores a receber poderá ter nas próximas fases, diz BC',
     content: [
       {
         resume: 'Nesta primeira fase do serviço são cerca de R$ 4 bilhões a serem devolvidos. Banco Central estima que os clientes tenham a receber cerca de R$ 8 bilhões.',
