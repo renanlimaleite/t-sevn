@@ -1,5 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import api from '../services/api'
 import { Publicidade } from './components/Publicidade/publicidade'
 import S from './index.module.scss'
@@ -42,6 +44,30 @@ const Home: NextPage<HomeProps> = ({ mainData, secondaryData }) => {
         <Publicidade>
           <h1>Publicidade</h1>
         </Publicidade>       
+        <section className={S.content}>
+          <Link href="/news/1">
+            <a className={S.contentMain} >
+              <strong>ECONOMIA</strong>
+              <h2>Quem não tiver valores a receber nesta etapa poderá ter nas próximas fases, diz BC</h2>
+            </a>
+          </Link>
+          <div className={S.contentWithImg}>
+            <Link href="/news/2">
+              <a>
+              <Image src="https://fakeimg.pl/280x190/" alt="fake" width={280} height={190} />
+                <strong className={S.educacao}>EDUCAÇÃO</strong>
+                <p>Datafolha: Após ensino remoto, 76% precisam de reforço na alfabetização</p>
+              </a>
+            </Link>
+            <Link href="/news/3">
+              <a>
+                <Image src="https://fakeimg.pl/280x190/" alt="fake" width={280} height={190} />
+                <strong className={S.diversidades}>EDUCAÇÃO</strong>
+                <p>Datafolha: Após ensino remoto, 76% precisam de reforço na alfabetização</p>
+              </a>
+            </Link>
+          </div>
+        </section>
       </main>
     </>
   )

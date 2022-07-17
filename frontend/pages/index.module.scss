@@ -22,3 +22,55 @@
   padding: 0 16px;
   margin: 0 auto;
 }
+
+.content {
+  margin-top: 84px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contentMain {
+  text-decoration: none;
+
+  h2 {
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 60px;
+    color: $black;
+  }
+
+  strong {
+    font-size: 12px;
+    line-height: 16px;
+    color: $economy-color;
+  }
+}
+
+.contentWithImg {
+  display: flex;
+  gap: 20px;
+
+  a {
+    text-decoration: none;
+  }
+
+  strong {
+    display: block;
+    margin: 8px 0px;
+    &.educacao {
+      color: $education-color;
+    }
+
+    &.diversidades {
+      color: $diversity-color
+    }
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: $black;
+  }
+}
