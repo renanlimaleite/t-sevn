@@ -1,8 +1,32 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
+import api from '../services/api'
 import S from './index.module.scss'
 
-const Home: NextPage = () => {
+export type Content = {
+  date: string
+  resume: string
+  text: string
+}
+
+interface HomeProps {
+  mainData: {
+    id: string
+    type: string
+    categorie: string
+    title: string
+    content: Content
+  }
+  secondaryData: {
+    id: string
+    type: string
+    categorie: string
+    title: string
+    content: Content
+  }
+}
+
+const Home: NextPage<HomeProps> = ({ mainData, secondaryData }) => {
   return (
     <>
       <Head>
@@ -13,11 +37,25 @@ const Home: NextPage = () => {
       <header className={S.header}>
         <h1>SEVN NEWS</h1>
       </header>
-      <main>
-        
+      <main className={S.container}>
+        <h1>Publicidade</h1>        
       </main>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const [main, secondary] = await Promise.all([api.get('/news'), api.get('/news/secondary')])
+
+  const mainData = main?.data
+  const secondaryData = secondary?.data
+
+  return {
+    props: {
+      mainData,
+      secondaryData
+    },
+  }
 }
 
 export default Home

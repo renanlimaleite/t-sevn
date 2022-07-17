@@ -1,11 +1,8 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
+import { Content } from ".."
 import api from "../../services/api"
 
-type Content = {
-  date: string
-  resume: string
-  text: string
-}
+
 
 interface PostProps {
   data: {
