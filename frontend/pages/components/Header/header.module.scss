@@ -1,0 +1,45 @@
+@import '../../../styles/theme.scss';
+
+.header {
+  height: 54px;
+  background-color: $yellow-main;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 32px;
+
+  h1 {
+    font-size: 23px;
+    color: #000;    
+  }
+}
+
+.headerBack {
+  height: 54px;
+  background-color: $yellow-main;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 32px;
+
+  a {
+    margin-right: auto;
+    background-color: $black;
+    height: 100%;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 23px;
+    color: #000;
+    margin-right: auto;
+    transform: translateX(-35px);
+  }
+}
