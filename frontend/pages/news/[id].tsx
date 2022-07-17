@@ -7,12 +7,16 @@ import api from "../../services/api"
 interface PostProps {
   data: {
     id: number
+    type: string
+    categorie: string
+    title: string
     content: Content[]
   }
 }
 
 const Posts: NextPage<PostProps> = (props) => { 
-  const { id, content } = props.data
+  const { id, content, categorie, title, type } = props.data
+  console.log(id, content, categorie, title, type)
   return <h1>Post</h1>
 }
 
@@ -38,6 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const id = ctx?.params?.id
   const { data } = await api.get(`/news/${id}`)
+  console.log(data)
   return {
     props: {
       data
