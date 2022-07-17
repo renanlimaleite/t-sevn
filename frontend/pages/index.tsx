@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import api from '../services/api'
 import { Publicidade } from './components/Publicidade/publicidade'
 import S from './index.module.scss'
@@ -12,24 +13,39 @@ export type Content = {
   text: string
 }
 
+type MainData = {
+  id: string
+  type: string
+  categorie: string
+  title: string
+  content: Content
+  img: string
+}
+
+type secondaryData = {
+  id: string
+  type: string
+  categorie: string
+  title: string
+  content: Content
+}
+
 interface HomeProps {
-  mainData: {
-    id: string
-    type: string
-    categorie: string
-    title: string
-    content: Content
-  }
-  secondaryData: {
-    id: string
-    type: string
-    categorie: string
-    title: string
-    content: Content
-  }
+  mainData: MainData[]
+  secondaryData: secondaryData[]
 }
 
 const Home: NextPage<HomeProps> = ({ mainData, secondaryData }) => {
+  const [firstMain, setFirstMain] = useState<MainData[]>([])
+  const [secondMain, setSecondMain] = useState<MainData[]>([])
+  
+
+  useEffect(() => {
+    const first = mainData.filter(item => !item.hasOwnProperty('img'))
+    const second = mainData.filter(item => item.hasOwnProperty('img'))
+    setFirstMain(first)
+    setSecondMain(second)
+  }, [mainData])
   return (
     <>
       <Head>
@@ -45,28 +61,36 @@ const Home: NextPage<HomeProps> = ({ mainData, secondaryData }) => {
           <h1>Publicidade</h1>
         </Publicidade>       
         <section className={S.content}>
-          <Link href="/news/1">
-            <a className={S.contentMain} >
-              <strong>ECONOMIA</strong>
-              <h2>Quem não tiver valores a receber nesta etapa poderá ter nas próximas fases, diz BC</h2>
-            </a>
-          </Link>
+          {!!firstMain.length && firstMain.map((news) => (
+            <Link href={`/news/${news.id}`} key={news.id}>
+              <a className={S.contentMain} >
+                <strong>{news.categorie.toUpperCase()}</strong>
+                <h2>{news.title}</h2>
+              </a>
+            </Link>
+          ))}          
           <div className={S.contentWithImg}>
-            <Link href="/news/2">
-              <a>
-              <Image src="https://fakeimg.pl/280x190/" alt="fake" width={280} height={190} />
-                <strong className={S.educacao}>EDUCAÇÃO</strong>
-                <p>Datafolha: Após ensino remoto, 76% precisam de reforço na alfabetização</p>
-              </a>
-            </Link>
-            <Link href="/news/3">
-              <a>
-                <Image src="https://fakeimg.pl/280x190/" alt="fake" width={280} height={190} />
-                <strong className={S.diversidades}>EDUCAÇÃO</strong>
-                <p>Datafolha: Após ensino remoto, 76% precisam de reforço na alfabetização</p>
-              </a>
-            </Link>
+            {!!secondMain.length && secondMain.map((news) => (
+              <Link href={`/news/${news.id}`} key={news.id}>
+                <a>
+                  <Image src={news.img} alt={news.title} width={280} height={190} />
+                  <strong className={S[news.categorie]}>{news.categorie.toUpperCase()}</strong>
+                  <p>{news.title}</p>
+                </a>
+              </Link>
+            ))}
           </div>
+        </section>
+        <section className={S.sectionSecondary}>
+          <div className={S.secondary}>
+            {!!secondaryData.length && secondaryData.map(news => (
+              <Link href={`/news/${news.id}`} key={news.id}>
+                <a className={S[news.categorie]}>
+                  <p>{news.title}</p>
+                </a>
+              </Link>
+            ))}
+            </div>
         </section>
       </main>
     </>

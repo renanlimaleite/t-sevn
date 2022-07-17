@@ -74,3 +74,57 @@
     color: $black;
   }
 }
+
+.sectionSecondary {
+  padding: 64px 0;
+
+  .secondary {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      position: relative;
+      width: 25%;
+      text-decoration: none;
+      color: #000;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 20px;      
+      padding-left: 10px;
+      margin-top: 20px;
+      height: 50px;
+
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 5px;        
+        height: 50px;
+      }
+
+      &.economia {
+        &::after {
+          background-color: $economy-color;
+        }
+      }
+
+      &.educacao {
+        &::after {
+          background-color: $education-color;
+        }
+      }
+  
+      &.diversidades {
+        &::after {
+          background-color: $diversity-color
+        }
+      }
+    }
+  }
+
+}
